@@ -74,13 +74,27 @@ function playRound(humanChoice, computerChoice) {
    } 
 }
 
-while (humanScore + computerScore <= 10) {
+function playGame() {
+   while (humanScore + computerScore < 3) {
+      playRound()
+   }
    if (humanScore > computerScore) {
       console.log(`The end, total score is ${humanScore} : ${computerScore}, you won 🎉`)
+      humanScore, computerScore = 0
    } else 
    if (humanScore < computerScore) {
       console.log(`The end, total score is ${humanScore} : ${computerScore}, you lost 😔`)
+      humanScore, computerScore = 0
    } else {
       console.log(`The end, total score is ${humanScore} : ${computerScore}, it's a tie`)
+      humanScore, computerScore = 0
    }
 }
+
+playGame()
+
+
+
+
+
+
